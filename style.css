@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
 @import url('gothampro.css');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,300&display=swap');
 :root {
     --main-bg-color: #1d1d1d;
     --main-txt-color: aliceblue;
@@ -71,6 +72,11 @@
     transition-delay: 0.4s;
     z-index: 0;
 }
+
+.menu a:nth-child(5) {
+    transition-delay: 0.5s;
+    z-index: 0;
+}
   
 .menu_active a:nth-child(1) {
     transform: translateY(5vh);
@@ -86,6 +92,10 @@
 
 .menu_active a:nth-child(4) {
     transform: translateY(20vh);
+}
+
+.menu_active a:nth-child(5) {
+    transform: translateY(25vh);
 }
 
 .menu-btn {
@@ -167,7 +177,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 1.5px solid var(--border-color);
+    border-bottom: 0.5vw solid var(--border-color);
 }
 
 .text p {
@@ -188,7 +198,8 @@ header {
     
 }
 
-#team-gallery {
+#team-gallery,
+#calendar-gallery {
     background-color: var(--bg-color);
     width: 100%;
     display: flex;
@@ -199,7 +210,8 @@ header {
     
 }
 
-#team-gallery h1 {
+#team-gallery h1,
+#calendar-gallery h1 {
     background-color: inherit;
     width: 90%;
     font-size: 7vw;
@@ -208,14 +220,16 @@ header {
 
 }
 
-#team-gallery p {
+#team-gallery p,
+#calendar-gallery p {
     background-color: inherit;
     width: 90%;
     font-size: var(--main-txt-size);
     padding-bottom: 5vw;
 }
 
-#gallery {
+#gallery,
+#shedule {
     /* background-color: var(--bg-color); */
     width: 100%;
     padding: 2vw;
@@ -231,9 +245,10 @@ header {
 
 
 
-.gallery-card {
-    width: 200px;
-    height: 200px;
+.gallery-card,
+.shedule-card-home {
+    width: 55vw;
+    height: 55vw;
     background-color: var(--bg-color);
     border-radius: 5%;
     flex-shrink: 0;
@@ -245,13 +260,118 @@ header {
     scroll-padding-inline-start: 20px; */
 }
 
-.gallery-card:not(:last-child) { margin-right: 3vw; }
-.gallery-card:first-child {margin-left: 3vw;}
-.gallery-card:last-child {width: 75px; background-color: inherit;}
-#gallery::-webkit-scrollbar { display: none;}
+.gallery-card:not(:last-child),
+.shedule-card-home:not(:last-child) { margin-right: 3vw; }
+.gallery-card:first-child,
+.shedule-card-home:first-child {margin-left: 3vw;}
+.gallery-card:last-child,
+.shedule-card-home:last-child {width: 75px; background-color: inherit;}
+#gallery::-webkit-scrollbar,
+#shedule::-webkit-scrollbar { display: none;}
 
 .gallery-card img {
     width: 90%;
     background-color: transparent;
+}
+
+#calendar-gallery {
+    border-top: 0.5vw solid var(--border-color);
+}
+
+/* card */
+.shedule-card-home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    perspective: 1000px;
+    background-color: var(--main-bg-color);
+    width: 70vw;
+
+}
+
+
+.shedule-card-home span {
+    background-color: inherit;
+}
+
+.matchday-promo-txt {
+    font-size: 4.5vw;
+}
+
+/* front */
+.shedule-logo-wrapper { 
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-image: linear-gradient(to bottom right, transparent 49%, var(--border-color), transparent 51%); */
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.shedule-logo-wrapper_active {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    transform: rotateY(180deg);
+}
+
+/*back  */
+.back-shedule {
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    transform: rotateY(180deg);
+}
+
+.back-shedule_active {
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    transform: rotateY(180deg);
+    transform: rotateY(360deg);
+}
+
+.shedule-logo {
+    width: 40%;
+    background-color: transparent;
+}
+
+.shedule-logo-wrapper span {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    font-size: 5vw;
+}
+
+.back-shedule span {
+    font-size: 5vw;
 }
 
