@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1> Форма тест календаря </h1>
+        <select name="tournament" id="tournament">
+            <option selected value="Российская Киберфутбольная Профи-Лига">Российская Киберфутбольная Профи-Лига</option>
+            <option value="Кубок РКПЛ">Кубок РКПЛ</option>
+        </select>
+        <select name="division" id="division">
+            <option value="Первый дивизион">Первый дивизион</option>
+            <option selected value="Второй дивизион">Второй дивизион</option>
+            <option value="Третий">Третий дивизион</option>
+        </select>
+        <label for="tour">Номер тура</label>
+        <input type="text" id="tour" name="tour" placeholder="Номер тура">
+        <input type="date" id="date" name="date">
+        <input type="time" id="time" name="time">
+        <input type="text" id="opponent" name="opponent" placeholder="С кем играем">
+        <select name="place" id="place">
+            <option selected value="Дома">Дома</option>
+            <option value="В гостях">В гостях</option>
+        </select>
+        <!-- по нажатию на эту кнопку данные уйдут на сервер -->
+        <button onclick="sendJSON()">Отправить</button>
+    <!-- а вот тут они появятся снова, но уже после обработки сервером -->
+    <br>
+    <br>
+    <p class="result" style="color:green"></p>
+    <br>
+    <button onclick="getJSON()">Получить</button>
+    <p id="getResult"></p>
+    <script src="admincalendar.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
