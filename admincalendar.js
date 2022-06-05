@@ -1,6 +1,6 @@
  // эта функция сработает при нажатии на кнопку
 
-  function sendJSON() {
+  function sendJSONCalendar() {
 
     //обращаемся к элементам на странице по их именам
 
@@ -45,31 +45,3 @@
 
     xhr.send(Matchdaydata); // когда всё готово, отправляем JSON на сервер
   }
-
-function deleteNull(arr) {
-    let newArr = [];
-
-    for (let i = 1; i < arr.length; i+=2) {
-        newArr.push(arr[i]);
-    }
-
-    return newArr;
-} 
-
-function getJSON() {
-    var requestURL = "https://iamdef.ru/json/data.json"
-    var request = new XMLHttpRequest();
-    var getResult = document.getElementById('getResult');
-
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-
-    request.onload = function() {
-        var dirtyMatchDay = this.response; // сейчас это массив с массивами, внутри которых объект дня матча, через один пустой массив
-        var sheduleMatches = deleteNull(dirtyMatchDay); // удаляем пустые массивы, получаем массив объектов дня матча
-
-        // сюда функции для объекта
-    }
-
-}
