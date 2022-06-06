@@ -108,11 +108,13 @@ function getJSONCalendarHome() {
         var dirtyMatchDay = this.response; // сейчас это массив с массивами, внутри которых объект дня матча, через один пустой массив
         var sheduleMatches = deleteNull(dirtyMatchDay); // удаляем пустые массивы, получаем массив массивов с объектами дня матча
 
-        let matchDate = new Date(sheduleMatches[0][0]["date"]); // Если матч уже прошел, его не должно быть в календаре
-        if (today > matchDate) {
-            let past = sheduleMatches[0];
-            sheduleMatches.splice(past, 1);
-        }    
+        for (let i = 0; i < sheduleMatches.length; i++) {
+            let matchDate = new Date(sheduleMatches[i][0]["date"]); // Если матч уже прошел, его не должно быть в календаре
+            if (today > matchDate) {
+                let past = sheduleMatches[0];
+                sheduleMatches.splice(past, 1);
+            }   
+        } 
 
         var tournamentList = takeObjProp(sheduleMatches, "tournament");
         var divisionList = takeObjProp(sheduleMatches, "division");
@@ -124,7 +126,6 @@ function getJSONCalendarHome() {
 
         console.log(sheduleMatches[0]);
 
-        // deleteMatchday(sheduleMatches);
         fillBackShedule(tournamentList, divisionList, tourList, timeList, dateList);
         fillFrontShedule(opponentList, placeList);
     }
