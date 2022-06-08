@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+/* @import url('gothampro.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,300&display=swap');
+
+:root {
+    --main-bg-color: #1d1d1d;
+    --main-txt-color: aliceblue;
+    --border-color: goldenrod;
+    --main-txt-size: 4vw;
+    --bg-color: rgb(15, 15, 15);
+    --slogan-fz: 10vw;
+    --h1-fz: 7vw;
+    --right-first-block-height: 14vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
+    font-family: 'Gotham Pro', sans-serif;
+}
+
+.menu-block {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#header-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#logo {
+    height: 70%;
+    background-color: transparent;
+}
+
+#social-header {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+
+}
+
+#full-menu {
+    grid-area: full-menu;
+    width: 100%;
+    display: block;
+    border-top: 0.125vw solid var(--border-color);
+    border-bottom: 0.0625vw solid var(--border-color);
+    background-color: #1d1d1d;
+}
+
+#full-menu nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+}
+
+#full-menu-nav-links {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 1.5vw;
+    font-weight: bold;
+    background-color: rgb(15, 15, 15);
+    padding: 1vw;
+
+}
+
+#full-menu-nav-links a {
+    background-color: rgb(15, 15, 15);
+    transition: color .75s;
+    text-decoration: none;
+}
+
+#full-menu-nav-links a:hover {
+    color: var(--border-color);
+}
+
+main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 8vh 20vh 60vh 20vh;
+    grid-template-areas:
+    "full-menu full-menu"
+    "text calendar-gallery-description"
+    "team-gallery calendar-gallery"
+    "footer home-contact"
+}
+
+.text {
+    background-color: rgb(15, 15, 15);
+    grid-area: text;
+    border-bottom: 0.0625vw solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#slogan {
+    font-size: 200%;
+    padding-left: 2vw;
+    background-color: transparent;
+}
+
+.text p {
+    font-size: 120%;
+    padding: 1vw 2vw .5vw 2vw;
+    background-color: transparent;
+}
+
+#team-gallery {
+    background-color: rgb(15, 15, 15);
+    grid-area: team-gallery;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#team-gallery h1 {
+    font-size: 150%;
+    padding-left: 2vw;
+    background-color: transparent;
+}
+
+#team-gallery p {
+    font-size: 100%;
+    padding: .5vw 0 1vw 2vw;
+    background-color: transparent;
+}
+
+#calendar-gallery-description {
+    background-color: rgb(15, 15, 15);
+    grid-area: calendar-gallery-description;
+    border-left: 0.0625vw solid var(--border-color);
+    border-bottom: 0.0625vw solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#calendar-gallery-description h1 {
+    background-color: transparent;
+    font-size: 150%;
+    padding-left: 2vw;
+
+}
+
+#calendar-gallery-description p {
+    font-size: 100%;
+    padding: .5vw 2vw 1vw 2vw;
+    background-color: transparent;
+
+}
+
+#calendar-gallery {
+    background-color: rgb(15, 15, 15);
+    grid-area: calendar-gallery;
+    z-index: 10;
+    border-left: 0.0625vw solid var(--border-color);
+}
+
+#home-contact {
+    background-color: rgb(15, 15, 15);
+    grid-area: home-contact;
+    z-index: 100;
+    border-left: 0.0625vw solid var(--border-color);
+    border-top: 0.0625vw solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-contact h1 {
+    font-size: 150%;
+    background-color: transparent;
+    text-align: center;
+}
+
+#home-contact p {
+    font-size: 100%;
+    background-color: transparent;
+    text-align: center;
+}
+
+#home-media-wrapper {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 2vw;
+    background-color: transparent;
+}
+
+#home-media-wrapper a,
+footer span a {
+    background-color: transparent;
+}
+
+footer {
+    background-color: rgb(15, 15, 15);
+    grid-area: footer;
+    border-top: 0.0625vw solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+footer span {
+    background-color: transparent;
+    padding: 0 0 2vw 2vw;
+    font-size: 80%;
+}
+
+#author {
+    color: var(--border-color);
+    background-color: transparent;
+    padding: unset;
+    font-size: 100%;
+}
+
+
+#gallery {
+    width: 100%;
+    padding: 2vw;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    list-style: none;
+    display: flex;
+}
+
+.gallery-card {
+    width: 20vw;
+    height: 20vw;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    flex-shrink: 0;
+}
+
+.gallery-card img {
+    background-color: transparent;
+    width: 90%;
+}
+
+.gallery-card:not(:last-child) {margin-right: 1vw;}
+.gallery-card:last-child {width: 10vw;}
+
+
+#gallery::-webkit-scrollbar,
+#shedule::-webkit-scrollbar { display: none;}
+
+#shedule {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 80;
+}
+
+.shedule-card-home {
+    width: 25vw;
+    height: 15vw;
+    position: relative;
+    border-radius: 5%;
+    flex-shrink: 0;
+    perspective: 1000px;
+}
+
+.shedule-card-home span {
+    background-color: inherit;
+}
+
+.shedule-card-home:last-child {
+    transform: rotate(90deg);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    height: 5vw;
+}
+
+.shedule-card-home:first-child {margin-top: 2vw;}
+
+.shedule-card-home:not(:last-child) { margin-bottom: 2vw; }
+
+/* front */
+.shedule-logo-wrapper { 
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.shedule-logo-wrapper_active {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    transform: rotateY(180deg);
+}
+
+/*back  */
+.back-shedule {
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    transform: rotateY(180deg);
+}
+
+.back-shedule_active {
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    transform: rotateY(180deg);
+    transform: rotateY(360deg);
+}
+
+.shedule-logo {
+    width: 40%;
+    background-color: transparent;
+}
+
+.shedule-logo-wrapper span {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.back-shedule span {
+    font-size: 120%;
+}

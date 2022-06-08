@@ -64,7 +64,7 @@ for (let i = 0; i < flipCards.length; i++) {
     let elementFront = flipCards[i] + ' .shedule-logo-wrapper';
     let elementBack = flipCards[i] + ' .back-shedule';
 
-    if ($width < 480) {
+    if ($width < 992) {
         $(flipCards[i]).on('click', function() {
             $(elementFront).toggleClass('shedule-logo-wrapper_active');
             $(elementBack).toggleClass('back-shedule_active');
@@ -75,6 +75,16 @@ for (let i = 0; i < flipCards.length; i++) {
             $(elementBack).toggleClass('back-shedule_active');
         });
     }
+}
+
+//drag-scrool by mouse
+
+var players = document.getElementById('gallery');
+var calendar = document.getElementById('shedule');
+
+if ($width > 480) {
+    $(players).toggleClass('dragscroll');
+    $(calendar).toggleClass('dragscroll');
 }
 
 
@@ -108,13 +118,7 @@ function getJSONCalendarHome() {
         var dirtyMatchDay = this.response; // сейчас это массив с массивами, внутри которых объект дня матча, через один пустой массив
         var sheduleMatches = deleteNull(dirtyMatchDay); // удаляем пустые массивы, получаем массив массивов с объектами дня матча
 
-        for (let i = 0; i < sheduleMatches.length; i++) {
-            let matchDate = new Date(sheduleMatches[i][0]["date"]); // Если матч уже прошел, его не должно быть в календаре
-            if (today > matchDate) {
-                let past = sheduleMatches[0];
-                sheduleMatches.splice(past, 1);
-            }   
-        } 
+        deletePastMatch(sheduleMatches);
 
         var tournamentList = takeObjProp(sheduleMatches, "tournament");
         var divisionList = takeObjProp(sheduleMatches, "division");
@@ -130,6 +134,16 @@ function getJSONCalendarHome() {
         fillFrontShedule(opponentList, placeList);
     }
 
+}
+
+function deletePastMatch(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let matchDate = new Date(arr[i][0]["date"]); // Если матч уже прошел, его не должно быть в календаре
+        if (today > matchDate) {
+            let past = arr[0];
+            arr.splice(past, 1);
+        }   
+    } 
 }
 
 //extracts the properties of objects from an array containing an array with these objects - json comes from the server in this format
@@ -161,3 +175,5 @@ function fillFrontShedule(opponentList, placeList) {
             }
     }
 }
+
+

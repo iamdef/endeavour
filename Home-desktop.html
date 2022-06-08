@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="home-style-adaptive.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <title>Endeavour - Start Page</title>
 </head>
@@ -16,7 +17,7 @@
         <nav class="menu">
             <a href="#"><i class="fa-solid fa-house"></i></a>
             <a href="#"><i class="fa-solid fa-people-group"></i></a>
-            <a href="#"><i class="fa-solid fa-calendar-day"></i></a>
+            <a href="#"><i class="fa-solid fa-calendar"></i></a>
             <a href="#"><i class="fa-solid fa-gamepad"></i></a>
             <a href="#"><i class="fa-brands fa-bitcoin"></i></a>
         </nav>
@@ -24,10 +25,25 @@
     <header>
         <div id="header-wrapper">
             <img id="logo" src="Endeavourlogo.png" alt="Endeavour's Logo">
-            <p id="social-header"></p>
+            <div id="social-header">
+                <a href="#" target="_blank"><i class="fa-brands fa-discord fa-2xl"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-vk fa-2xl"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+            </div>
         </div>
     </header>
     <main>
+        <section id="full-menu">
+            <nav>
+                <ul id="full-menu-nav-links">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Команда</a></li>
+                    <li><a href="#">Календарь</a></li>
+                    <li><a href="#">Играть</a></li>
+                    <li><a href="#">Поддержать</a></li>
+                </ul>
+            </nav>
+        </section>
         <section class="text">
             <h1 id="slogan">Играем на благо Харькова и всех харьковчан</h1>
             <p>
@@ -43,12 +59,15 @@
                 <li class="gallery-card"><img src="imgholder.png" alt=""></li>
                 <li class="gallery-card"><img src="imgholder.png" alt=""></li>
                 <li class="gallery-card"><img src="imgholder.png" alt=""></li>
+                <li class="gallery-card"><img src="imgholder.png" alt=""></li>
                 <li class="gallery-card"><a href="#"><i class="fa-solid fa-chevron-right fa-2xl fa-beat-fade" style="--fa-beat-fade-opacity: 0.1; --fa-beat-fade-scale: 1.25; --fa-animation-duration: 2s;"></i></a></li>
             </ul>
         </section>
-        <section id="calendar-gallery">
-            <h1>Календарь официальных матчей</h1>
+        <section id="calendar-gallery-description">
+            <h1>Календарь ближайших матчей</h1>
             <p>Победить поможет только чудо</p>
+        </section>
+        <section id="calendar-gallery">
             <ul id="shedule">
                 <li class="shedule-card-home" id="firstCard">
                     <div class="shedule-logo-wrapper"></div>
@@ -78,13 +97,14 @@
                 <a href="#" target="_blank"><i class="fa-brands fa-youtube fa-2xl"></i></a>
             </div>
         </section>
+        <footer>
+            <span>Официальный сайт FIFA 22 Профи-клуба Endeavour &copy 2022 <br><br> Разработано при обучении <a href="https://iamdef.ru/" target="_blank"><span id="author">iamdef</span></a></span>
+        </footer>
     </main>
-    <footer>
-        <span>Официальный сайт FIFA 22 Профи-клуба Endeavour &copy 2022 <br><br> Разработано <a href="https://iamdef.ru/" target="_blank"><span id="author">iamdef</span></a></span>
-    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script src="/node_modules/dragscroll/dragscroll.js"></script>
 </body>
 </html>
