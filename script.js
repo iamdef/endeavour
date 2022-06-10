@@ -54,15 +54,26 @@ $('.menu-btn').on('click', function(e) {
 
 // rotate cards
 
+//динамическое присваивание id для вращающихся карточек
+
+var flipCard = document.getElementsByClassName('shedule-card-home');
+var flipCards = [];
+
+for (let k = 0; k < (flipCard.length - 1); k++) {
+    flipCard[k].id = k + 'card';
+    flipCards.push('#' + flipCard[k].id);
+}
+
+// переопределение классов для вращения
+
 var $width = $(window).width()
-
-var flipCards = ['#firstCard', '#secondCard', '#thirdCard', '#fourthCard'];
-
 
 for (let i = 0; i < flipCards.length; i++) {
 
     let elementFront = flipCards[i] + ' .shedule-logo-wrapper';
     let elementBack = flipCards[i] + ' .back-shedule';
+
+    console.log(elementFront);
 
     if ($width < 992) {
         $(flipCards[i]).on('click', function() {
@@ -127,8 +138,10 @@ function getJSONCalendarHome() {
         var dateList = takeObjProp(sheduleMatches, "date");
         var opponentList = takeObjProp(sheduleMatches, "opponent");
         var placeList = takeObjProp(sheduleMatches, "place");
+        var nextMatch = dateList[0] + "T" + timeList[0] + ":00"; //2022-01-01T22:30:00 формат даты для таймера
 
-        console.log(sheduleMatches[0]);
+        var deadline = new Date(nextMatch);
+        initializeClock('countdown', deadline);
 
         fillBackShedule(tournamentList, divisionList, tourList, timeList, dateList);
         fillFrontShedule(opponentList, placeList);
@@ -137,13 +150,17 @@ function getJSONCalendarHome() {
 }
 
 function deletePastMatch(arr) {
+    let pasts = [];
     for (let i = 0; i < arr.length; i++) {
         let matchDate = new Date(arr[i][0]["date"]); // Если матч уже прошел, его не должно быть в календаре
         if (today > matchDate) {
-            let past = arr[0];
+            pasts
+            let past = arr.indexOf(arr[i]);
             arr.splice(past, 1);
         }   
     } 
+
+    return arr;
 }
 
 //extracts the properties of objects from an array containing an array with these objects - json comes from the server in this format
@@ -176,4 +193,44 @@ function fillFrontShedule(opponentList, placeList) {
     }
 }
 
+//countdown
 
+function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+
+   
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+   
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+   
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+   
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+   
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }

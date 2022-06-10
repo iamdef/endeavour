@@ -4,12 +4,13 @@
     }
 
     #full-menu {
-        border-top: 0.25vw solid var(--border-color);
+        border-top: none;
     }
 
     #full-menu-nav-links {
         width: 100%;
         font-size: 100%;
+        border-top: 0.125vw solid var(--border-color);
     }
 
     main {
@@ -18,6 +19,10 @@
 
     #slogan {
         font-size: 150%;
+    }
+
+    .text {
+        border-top: 0.125vw solid var(--border-color);
     }
     
     .text p {
@@ -30,6 +35,10 @@
     
     #team-gallery p {
         font-size: 90%;
+    }
+
+    #calendar-gallery-description {
+        border-top: 0.125vw solid var(--border-color);
     }
 
     #calendar-gallery-description h1 {
@@ -51,7 +60,43 @@
     footer span {
         font-size: 60%;
     }
+    
+    .countdown {
+        width: 90%;
+      }
+
+    .countdown-time {
+        font-size: 80%;
+      }
+       
+    .countdown-text {
+        font-size: 15px;
+      }
 }
+
+@media all and (max-width: 1320px) {
+
+    #full-menu {
+        border-top: 0.35vw solid var(--border-color);
+    }
+
+    .countdown {
+        width: 80%;
+    }
+
+    .countdown-time {
+        font-size: 60%;
+    }
+       
+    .countdown-text {
+        font-size: 12px;
+    }
+
+    .countdown-number {
+        padding: 3px;
+      }
+}
+
 
 @media all and (max-width: 768px) {  
 
@@ -241,6 +286,15 @@
         border-bottom: none;
         border-left: none;
         border-top: 0.5vw solid var(--border-color);
+    }
+
+    .countdown,
+    #countdown-title {
+        display: none;
+    }
+    
+    #wonder {
+        display: block;
     }
 
     #team-gallery h1,
