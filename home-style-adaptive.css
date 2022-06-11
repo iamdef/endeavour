@@ -292,13 +292,30 @@
         border-top: 0.5vw solid var(--border-color);
     }
 
-    .countdown,
-    #countdown-title {
-        display: none;
+    #calendar-gallery-description p {
+        background-color: inherit;
+        width: 90%;
+        font-size: 3.5vw;
+        padding-bottom: 2vw;
+        padding-left: 3vw;
+        padding-right: 0;
     }
 
-    #wonder {
-        display: block;
+    .countdown {
+        width: 50%;
+        margin: 0 0 2vw 0;
+    }
+       
+    .countdown-number {
+        padding: 10px;
+    }
+       
+    .countdown-time {
+        font-size: 90%;
+    }
+       
+    .countdown-text {
+        font-size: 16px;
     }
 
     #team-gallery h1,
@@ -312,8 +329,7 @@
     }
     
     #team-gallery p,
-    #calendar-gallery p,
-    #calendar-gallery-description p {
+    #calendar-gallery p {
     background-color: inherit;
     width: 90%;
     font-size: 3.5vw;
@@ -505,4 +521,50 @@
         background-color: transparent;
     }
 
+}
+
+@media all and (max-width: 585px) {
+    .countdown {
+        width: 60%;
+    }
+}
+
+@media all and (max-width: 480px) {
+
+    .countdown {
+        width: 50%;
+        margin: 0 0 2vw 0;
+    }
+       
+    .countdown-number {
+        padding: 5px;
+    }
+       
+    .countdown-time {
+        font-size: 80%;
+    }
+       
+    .countdown-text {
+        font-size: 10px;
+    }
+}
+
+@media all and (max-width: 480px) {
+
+    .countdown {
+        width: 70%;
+        margin: 0 0 2vw 0;
+    }
+       
+    .countdown-number {
+        padding: 5px;
+    }
+       
+    .countdown-time {
+        font-size: 80%;
+    }
+       
+    .countdown-text {
+        font-size: 10px;
+    }
 }

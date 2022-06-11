@@ -200,10 +200,6 @@ main {
     justify-content: center;
     align-items: center;
 }
-
-#wonder {
-    display: none;
-}
  
 .countdown {
     color: #fff;
