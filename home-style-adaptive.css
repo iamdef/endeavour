@@ -72,6 +72,10 @@
     .countdown-text {
         font-size: 15px;
       }
+
+    #noshedule span {
+        font-size: 150%;
+    }
 }
 
 @media all and (max-width: 1320px) {
@@ -292,7 +296,7 @@
     #countdown-title {
         display: none;
     }
-    
+
     #wonder {
         display: block;
     }

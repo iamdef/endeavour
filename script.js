@@ -73,8 +73,6 @@ for (let i = 0; i < flipCards.length; i++) {
     let elementFront = flipCards[i] + ' .shedule-logo-wrapper';
     let elementBack = flipCards[i] + ' .back-shedule';
 
-    console.log(elementFront);
-
     if ($width < 992) {
         $(flipCards[i]).on('click', function() {
             $(elementFront).toggleClass('shedule-logo-wrapper_active');
@@ -129,66 +127,88 @@ function getJSONCalendarHome() {
         var dirtyMatchDay = this.response; // сейчас это массив с массивами, внутри которых объект дня матча, через один пустой массив
         var sheduleMatches = deleteNull(dirtyMatchDay); // удаляем пустые массивы, получаем массив массивов с объектами дня матча
 
-        deletePastMatch(sheduleMatches);
+        var sheduleMatchesSort = sortByDateByTime(sheduleMatches);
 
-        var tournamentList = takeObjProp(sheduleMatches, "tournament");
-        var divisionList = takeObjProp(sheduleMatches, "division");
-        var tourList = takeObjProp(sheduleMatches, "tour");
-        var timeList = takeObjProp(sheduleMatches, "time");
-        var dateList = takeObjProp(sheduleMatches, "date");
-        var opponentList = takeObjProp(sheduleMatches, "opponent");
-        var placeList = takeObjProp(sheduleMatches, "place");
-        var nextMatch = dateList[0] + "T" + timeList[0] + ":00"; //2022-01-01T22:30:00 формат даты для таймера
+        var nextMatches = deletePastMatch(sheduleMatchesSort);
 
-        var deadline = new Date(nextMatch);
+        deleteSheduleCard(nextMatches, flipCard)
+
+        console.log(nextMatches.length);
+        console.log(flipCard.length);
+
+        var nextMatchTime = nextMatches[0]["date"] + "T" + nextMatches[0]["time"] + ":00"; //2022-01-01T22:30:00 формат даты для таймера
+
+        var deadline = new Date(nextMatchTime);
         initializeClock('countdown', deadline);
 
-        fillBackShedule(tournamentList, divisionList, tourList, timeList, dateList);
-        fillFrontShedule(opponentList, placeList);
+        fillBackShedule(nextMatches);
+        fillFrontShedule(nextMatches);
     }
 
 }
 
 function deletePastMatch(arr) {
-    let pasts = [];
+    let next = [];
     for (let i = 0; i < arr.length; i++) {
-        let matchDate = new Date(arr[i][0]["date"]); // Если матч уже прошел, его не должно быть в календаре
-        if (today > matchDate) {
-            pasts
-            let past = arr.indexOf(arr[i]);
-            arr.splice(past, 1);
+        let matchDate = new Date(arr[i]["date"]); // Если матч уже прошел, его не должно быть в календаре
+        if (today < matchDate) {
+            next.push(arr[i])
         }   
     } 
 
-    return arr;
+    return next;
 }
 
-//extracts the properties of objects from an array containing an array with these objects - json comes from the server in this format
+function sortByDateByTime(arr) {
+    let array = [];
 
-function takeObjProp(arr, prop) {
-    let propArray = [];
     for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-            propArray.push(arr[i][j][prop]);
-        }
+        array.push(arr[i][0]);
     }
-    return propArray;
+
+    array.sort(function(a,b) {
+        let date1 = new Date(a["date"] + "T" + a["time"]);
+        let date2 = new Date(b["date"] + "T" + b["time"]);
+
+        if (date1 > date2) {
+            return 1;
+        } else if (date1 < date2) {
+            return -1;
+        }
+        return 0;
+    })
+
+    return array;
 }
 
-function fillBackShedule(tournamentList, divisionList, tourList, timeList, dateList) {
-    for (let i = 0; i < backShedule.length; i++) {
-            backShedule[i].innerHTML = `<span>${tournamentList[i]}</span><span>${divisionList[i]}</span><span>Тур ${tourList[i]}</span><span>${dateList[i]} | ${timeList[i]} МСК</span>`;
+function deleteSheduleCard(fillerArr, filledArr) {
+    let j = 0;
+    while (filledArr.length - 1 > fillerArr.length) {
+        filledArr[fillerArr.length].remove()
+        j++
+    }
+
+    if (filledArr.length == 1) {
+        filledArr[filledArr.length - 1].remove();
+        document.getElementById('countdown-title').innerText = 'Победить поможет только чудо';
+        document.getElementById('countdown').remove();
+        calendar.innerHTML = '<div id="noshedule">Пока нет матчей<br><br><span>¯\\_(ツ)_/¯</span></div>'
+
+    }
+}
+
+function fillBackShedule(arr) {
+    for (let i = 0; i < arr.length; i++) {
+            backShedule[i].innerHTML = `<span>${arr[i]["tournament"]}</span><span>${arr[i]["division"]}</span><span>Тур ${arr[i]["tour"]}</span><span>${arr[i]["date"]} | ${arr[i]["time"]} МСК</span>`;
         }
 }
 
-
-
-function fillFrontShedule(opponentList, placeList) {
-    for (let i = 0; i < frontShedule.length; i++) {
-            if (placeList[i] === "Дома") {
-                frontShedule[i].innerHTML = '<img src="rkpllogos/Endeavourlogo.png" alt="Home team logo" class="shedule-logo homeTeamLogo">' + '<span>VS</span>' + `<img src=${Logo[opponentList[i]]} alt="Guest team logo" class="shedule-logo guestTeamLogo">`;
+function fillFrontShedule(arr) {
+    for (let i = 0; i < arr.length; i++) {
+            if (arr[i]["place"] === "Дома") {
+                frontShedule[i].innerHTML = '<img src="rkpllogos/Endeavourlogo.png" alt="Home team logo" class="shedule-logo homeTeamLogo">' + '<span>VS</span>' + `<img src=${Logo[arr[i]["opponent"]]} alt="Guest team logo" class="shedule-logo guestTeamLogo">`;
             } else {
-                frontShedule[i].innerHTML = `<img src=${Logo[opponentList[i]]} alt="Home team logo" class="shedule-logo homeTeamLogo">` + '<span>VS</span>' + '<img src="rkpllogos/Endeavourlogo.png" alt="Guest team logo" class="shedule-logo guestTeamLogo">';
+                frontShedule[i].innerHTML = `<img src=${Logo[arr[i]["opponent"]]} alt="Home team logo" class="shedule-logo homeTeamLogo">` + '<span>VS</span>' + '<img src="rkpllogos/Endeavourlogo.png" alt="Guest team logo" class="shedule-logo guestTeamLogo">';
             }
     }
 }

@@ -205,7 +205,7 @@ main {
     display: none;
 }
  
-  .countdown {
+.countdown {
     color: #fff;
     display: flex;
     width: 80%;
@@ -216,31 +216,31 @@ main {
     font-size: 30px;
     margin: .5vw 0 .5vw 0;
     background-color: transparent;
-  }
+}
    
-  .countdown-number {
+.countdown-number {
     border-radius: 3px;
     display: inline-block;
     background-color: aliceblue;
     padding: 7px;
     width: auto;
-  }
+}
    
-  .countdown-time {
+.countdown-time {
     border-radius: 3px;
     display: inline-block;
     background-color: transparent;
     color: rgb(15, 15, 15);
     font-size: 90%;
-  }
+}
    
-  .countdown-text {
+.countdown-text {
     display: block;
     font-size: 16px;
     text-align: center;
     background-color: transparent;
     color: rgb(15, 15, 15);
-  }
+}
 
 #calendar-gallery {
     background-color: rgb(15, 15, 15);
@@ -365,6 +365,22 @@ footer span {
     flex-direction: column;
     align-items: center;
     z-index: 80;
+}
+
+#noshedule {
+    background-color: inherit;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* font-family: 'Exo 2', sans-serif; */
+    font-size: 150%;
+}
+
+#noshedule span {
+    font-size: 200%;
 }
 
 .shedule-card-home {
