@@ -4,65 +4,129 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <title>Document</title>
+    <title>Endeavour - Кабинет администратора</title>
 </head>
 <body>
-    <h1> Форма тест календаря </h1>
-        <select name="tournament" id="tournament">
-            <option selected value="Российская Киберфутбольная Профи-Лига">Российская Киберфутбольная Профи-Лига</option>
-            <option value="Кубок РКПЛ">Кубок РКПЛ</option>
-        </select>
-        <select name="division" id="division">
-            <option value="Первый дивизион">Первый дивизион</option>
-            <option selected value="Второй дивизион">Второй дивизион</option>
-            <option value="Третий">Третий дивизион</option>
-        </select>
-        <label for="tour">Номер тура</label>
-        <input type="text" id="tour" name="tour" placeholder="Номер тура">
-        <input type="date" id="date" name="date">
-        <input type="time" id="time" name="time">
-        <select name="opponent" id="opponent">
-            <option selected value="FlintsCrew">FlintsCrew</option>
-            <option value="Dynamo">Dynamo</option>
-            <option value="Galactic">Galactic</option>
-            <option value="Hornets">Hornets</option>
-            <option value="Jaguars">Jaguars</option>
-            <option value="JellyBears">JellyBears</option>
-            <option value="LosVecinos">LosVecinos</option>
-            <option value="LuckyStrike">LuckyStrike</option>
-            <option value="Phenomenons">Phenomenons</option>
-            <option value="SwineHeards">SwineHeards</option>
-            <option value="RussoTuristo">RussoTuristo</option>
-            <option value="Dobro">Dobro</option>
-            <option value="LevelPro">LevelPro</option>
-            <option value="FLPro">FLPro</option>
-            <option value="UnitedCity">UnitedCity</option>
-            <option value="RedStar">RedStar</option>
-            <option value="Element">Element</option>
-            <option value="Savage">Savage</option>
-            <option value="NecroRaisers">NecroRaisers</option>
-            <option value="Continental">Continental</option>
-            <option value="GazMyaz">GazMyaz</option>
-            <option value="Echelon">Echelon</option>
-            <option value="Karbysh">Karbysh</option>
-            <option value="CrookedPunch">CrookedPunch</option>
-            <option value="Ragnarok">Ragnarok</option>
-            <option value="TheRed">TheRed</option>
-            <option value="DralGaming">DralGaming</option>
-        </select>
-        <select name="place" id="place">
-            <option selected value="Дома">Дома</option>
-            <option value="В гостях">В гостях</option>
-        </select>
-        <!-- по нажатию на эту кнопку данные уйдут на сервер -->
-        <button onclick="sendJSONCalendar()">Отправить</button>
-    <!-- а вот тут они появятся снова, но уже после обработки сервером -->
-    <br>
-    <br>
-    <p class="result" style="color:green"></p>
-    <br>
+    <h1> Добавить матч в календарь </h1>
+        <div id="calendar">
+            <select name="tournament" id="tournament">
+                <option selected value="Российская Киберфутбольная Профи-Лига">Российская Киберфутбольная Профи-Лига</option>
+                <option value="Кубок РКПЛ">Кубок РКПЛ</option>
+                <option value="Кубок Второго дивизиона">Кубок Второго дивизиона</option>
+                <option value="Кубок Первого дивизиона">Кубок Первого дивизиона</option>
+            </select>
+            <select name="division" id="division">
+                <option value="Первый дивизион">Первый дивизион</option>
+                <option selected value="Второй дивизион">Второй дивизион</option>
+                <option value="Третий">Третий дивизион</option>
+            </select>
+            <label for="tour">Номер тура</label>
+            <input type="text" id="tour" name="tour" placeholder="Номер тура">
+            <input type="date" id="date-calendar" name="date">
+            <input type="time" id="time-calendar" name="time">
+            <select name="opponent" id="opponent-calendar">
+                <option selected value="FlintsCrew">FlintsCrew</option>
+                <option value="Dynamo">Dynamo</option>
+                <option value="Galactic">Galactic</option>
+                <option value="Hornets">Hornets</option>
+                <option value="Jaguars">Jaguars</option>
+                <option value="JellyBears">JellyBears</option>
+                <option value="LosVecinos">LosVecinos</option>
+                <option value="LuckyStrike">LuckyStrike</option>
+                <option value="Phenomenons">Phenomenons</option>
+                <option value="SwineHeards">SwineHeards</option>
+                <option value="RussoTuristo">RussoTuristo</option>
+                <option value="Dobro">Dobro</option>
+                <option value="LevelPro">LevelPro</option>
+                <option value="FLPro">FLPro</option>
+                <option value="UnitedCity">UnitedCity</option>
+                <option value="RedStar">RedStar</option>
+                <option value="Element">Element</option>
+                <option value="Savage">Savage</option>
+                <option value="NecroRaisers">NecroRaisers</option>
+                <option value="Continental">Continental</option>
+                <option value="GazMyaz">GazMyaz</option>
+                <option value="Echelon">Echelon</option>
+                <option value="Karbysh">Karbysh</option>
+                <option value="CrookedPunch">CrookedPunch</option>
+                <option value="Ragnarok">Ragnarok</option>
+                <option value="TheRed">TheRed</option>
+                <option value="DralGaming">DralGaming</option>
+            </select>
+            <select name="place" id="place">
+                <option selected value="Дома">Дома</option>
+                <option value="В гостях">В гостях</option>
+            </select>
+            <!-- по нажатию на эту кнопку данные уйдут на сервер -->
+            <button onclick="sendJSONCalendar()">Отправить</button>
+        <!-- а вот тут они появятся снова, но уже после обработки сервером -->
+        <br>
+        <br>
+        <p class="result" style="color:green"></p>
+        <br>
+        </div>
+
+        <h1>Внести результаты матча</h1>
+        <div id="results">
+            <select name="tournament" id="tournament-results">
+                <option selected value="Российская Киберфутбольная Профи-Лига">Российская Киберфутбольная Профи-Лига</option>
+                <option value="Кубок РКПЛ">Кубок РКПЛ</option>
+                <option value="Кубок Второго дивизиона">Кубок Второго дивизиона</option>
+                <option value="Кубок Первого дивизиона">Кубок Первого дивизиона</option>
+            </select>
+            <select name="division" id="division-results">
+                <option value="Первый дивизион">Первый дивизион</option>
+                <option selected value="Второй дивизион">Второй дивизион</option>
+                <option value="Третий">Третий дивизион</option>
+            </select>
+            <label for="tour">Номер тура</label>
+            <input type="text" id="tour-results" name="tour" placeholder="Номер тура">
+            <input type="date" id="date-results" name="date">
+            <input type="time" id="time-results" name="time">
+            <select name="opponent" id="opponent-results">
+                <option selected value="FlintsCrew">FlintsCrew</option>
+                <option value="Dynamo">Dynamo</option>
+                <option value="Galactic">Galactic</option>
+                <option value="Hornets">Hornets</option>
+                <option value="Jaguars">Jaguars</option>
+                <option value="JellyBears">JellyBears</option>
+                <option value="LosVecinos">LosVecinos</option>
+                <option value="LuckyStrike">LuckyStrike</option>
+                <option value="Phenomenons">Phenomenons</option>
+                <option value="SwineHeards">SwineHeards</option>
+                <option value="RussoTuristo">RussoTuristo</option>
+                <option value="Dobro">Dobro</option>
+                <option value="LevelPro">LevelPro</option>
+                <option value="FLPro">FLPro</option>
+                <option value="UnitedCity">UnitedCity</option>
+                <option value="RedStar">RedStar</option>
+                <option value="Element">Element</option>
+                <option value="Savage">Savage</option>
+                <option value="NecroRaisers">NecroRaisers</option>
+                <option value="Continental">Continental</option>
+                <option value="GazMyaz">GazMyaz</option>
+                <option value="Echelon">Echelon</option>
+                <option value="Karbysh">Karbysh</option>
+                <option value="CrookedPunch">CrookedPunch</option>
+                <option value="Ragnarok">Ragnarok</option>
+                <option value="TheRed">TheRed</option>
+                <option value="DralGaming">DralGaming</option>
+            </select>
+            <input type="text" id="score" name="score" placeholder="Счет матча">
+            <select name="resultat" id="resultat">
+                <option value="Победа">Победа</option>
+                <option value="Ничья">Ничья</option>
+                <option value="Поражение">Поражение</option>
+            </select>
+            <input type="text" id="youtube" name="youtube" placeholder="Ccылка на видео">
+            <button onclick="sendJSONResults()">Отправить</button>
+            <br>
+            <p class="result-results" style="color:green"></p>
+            <br>
+        </div>
+
     <script src="admincalendar.js"></script>
 </body>
 </html>

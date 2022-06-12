@@ -5,29 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calendar-style.css">
+    <link rel="stylesheet" href="calendar-style-adaptive.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <title>Endeavour - Календарь игр</title>
 </head>
 <body>
-    <h1 class="countdown-title">До следующего матча:</h1>
-<div id="countdown" class="countdown">
-  <div class="countdown-number">
-    <span class="days countdown-time"></span>
-    <span class="countdown-text">Дней</span>
-  </div>
-  <div class="countdown-number">
-    <span class="hours countdown-time"></span>
-    <span class="countdown-text">Часов</span>
-  </div>
-  <div class="countdown-number">
-    <span class="minutes countdown-time"></span>
-    <span class="countdown-text">Минут</span>
-  </div>
-  <div class="countdown-number">
-    <span class="seconds countdown-time"></span>
-    <span class="countdown-text">Секунд</span>
-  </div>
-</div>
-<script src="calendar.js"></script>
+    <div class="menu-block">
+        <a class="menu-btn" href="#">
+            <span></span>  
+        </a>
+        <nav class="menu">
+            <a href="Home-desktop.html"><i class="fa-solid fa-house"></i></a>
+            <a href="#"><i class="fa-solid fa-people-group"></i></a>
+            <a href="calendar.html"><i class="fa-solid fa-calendar"></i></a>
+            <a href="#"><i class="fa-solid fa-gamepad"></i></a>
+            <a href="#"><i class="fa-brands fa-bitcoin"></i></a>
+        </nav>
+    </div>
+    <header>
+        <div id="header-wrapper">
+            <img id="logo" src="Endeavourlogo.png" alt="Endeavour's Logo">
+            <div id="social-header">
+                <a href="#" target="_blank"><i class="fa-brands fa-discord fa-2xl"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-vk fa-2xl"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="full-menu">
+            <nav>
+                <ul id="full-menu-nav-links">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Команда</a></li>
+                    <li><a href="#">Календарь</a></li>
+                    <li><a href="#">Играть</a></li>
+                    <li><a href="#">Поддержать</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="tabs">
+            <ul class="tabs_caption">
+                <li class="active">Расписание</li>
+                <li>Результаты</li>
+            </ul>
+            <div id="shedule" class="tabs_content active">
+                <div class="view-icons">
+                    <i class="fa-solid fa-table-cells-large icon-active"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="tabs_inner icon-active" id="shedule-to-cards">
+                    <ul id="shedule-tab" class="table"></ul>
+                </div>
+                <div class="tabs_inner" id="shedule-to-list">
+                    <ul id="shedule-list" class="list"></ul>
+                </div>
+            </div>
+            <div id="results" class="tabs_content">
+                <div class="view-icons">
+                    <i class="fa-solid fa-table-cells-large icon-active"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="tabs_inner icon-active" id="results-to-cards">
+                    <ul id="results-tab" class="table">
+                        <!-- <li class="results-card">
+                            <div class="res-logo">
+                                <img src="rkpllogos/Endeavourlogo.png" alt="Home team logo">
+                            </div>
+                            <div class="results-data-wrapper">
+                                <div class="up-data-wrapper">
+                                    <span>РКПЛ</span>
+                                    <span>Второй дивизион</span>
+                                    <span>12.06.22</span>
+                                    <span>Тур 1</span>
+                                 </div>
+                                <span class="score">5 : 0</span>
+                                <a href="#" target="_blank"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+                            </div>
+                            <div class="res-logo">
+                                <img src="rkpllogos/galactic.png" alt="Guest team logo">
+                            </div>    
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="tabs_inner" id="results-to-list">
+                    <ul id="results-list" class="list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <span>Официальный сайт FIFA 22 Профи-клуба Endeavour &copy 2022 <br><br> Разработано <a href="https://iamdef.ru/" target="_blank"><span id="author">iamdef</span></a></span>
+    </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
 </body>
 </html>

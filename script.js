@@ -116,7 +116,7 @@ let today = new Date();
 window.addEventListener('load', getJSONCalendarHome, false);
 
 function getJSONCalendarHome() {
-    var requestURL = "https://iamdef.ru/json/data.json"
+    var requestURL = "https://iamdef.ru/json/calendar/data.json"
     var request = new XMLHttpRequest();
 
     request.open('GET', requestURL);
@@ -199,7 +199,11 @@ function deleteSheduleCard(fillerArr, filledArr) {
 
 function fillBackShedule(arr) {
     for (let i = 0; i < arr.length; i++) {
+        if (arr[i]["tournament"] != 'Российская Киберфутбольная Профи-Лига') {
+            backShedule[i].innerHTML = `<span>${arr[i]["tournament"]}</span><span> Стадия: ${arr[i]["tour"]}</span><span>${arr[i]["date"]} | ${arr[i]["time"]} МСК</span>`;
+        } else {
             backShedule[i].innerHTML = `<span>${arr[i]["tournament"]}</span><span>${arr[i]["division"]}</span><span>Тур ${arr[i]["tour"]}</span><span>${arr[i]["date"]} | ${arr[i]["time"]} МСК</span>`;
+        }
         }
 }
 
