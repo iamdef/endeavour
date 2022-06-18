@@ -665,7 +665,7 @@
     .tabs_caption {
         background-color: var(--bg-color);
         width: 100%;
-        height: calc(var(--h1) + 5vw);
+        height: calc(var(--h1) + 7vw);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -706,6 +706,20 @@
         border-bottom: 0.5vw solid transparent;
     }
 
+    #left-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 0;
+    }
+    
+    #right-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+    }
+
     .view-icons i {
         background-color: transparent;
     }
@@ -723,9 +737,9 @@
     }
 
     .view-icons {
-        font-size: 4.75vh;
+        font-size: 4vh;
         width: 100%;
-        height: calc(var(--h1) + 6vw);
+        height: calc(var(--h1) + 10vw);
         background-color: var(--bg-color);
         display: flex;
         justify-content: center;

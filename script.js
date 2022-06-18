@@ -41,8 +41,12 @@ VANTA.WAVES({
     "CrookedPunch": "rkpllogos/levelpro.png",
     "Ragnarok": "rkpllogos/ragnarok.png",
     "TheRed": "rkpllogos/thered.png",
-    "DralGaming": "rkpllogos/dralgaming.png"
-  };
+    "DralGaming": "rkpllogos/dralgaming.png",
+    "FergieTime": "rkpllogos/fergieTime.png",
+    "California":"rkpllogos/california.png",
+    "Gladiators": "rkpllogos/gladiators.png",
+    "EveryonMatters": "rkpllogos/everyonmatters.png"
+};
 
 // menu
 
@@ -150,7 +154,7 @@ function getJSONCalendarHome() {
 function deletePastMatch(arr) {
     let next = [];
     for (let i = 0; i < arr.length; i++) {
-        let matchDate = new Date(arr[i]["date"]); // Если матч уже прошел, его не должно быть в календаре
+        let matchDate = new Date(arr[i]["date"] + "T" + arr[i]["time"]); // Если матч уже прошел, его не должно быть в календаре
         if (today < matchDate) {
             next.push(arr[i])
         }   
@@ -198,7 +202,7 @@ function deleteSheduleCard(fillerArr, filledArr) {
 }
 
 function fillBackShedule(arr) {
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < backShedule.length; i++) {
         if (arr[i]["tournament"] != 'Российская Киберфутбольная Профи-Лига') {
             backShedule[i].innerHTML = `<span>${arr[i]["tournament"]}</span><span> Стадия: ${arr[i]["tour"]}</span><span>${arr[i]["date"]} | ${arr[i]["time"]} МСК</span>`;
         } else {
@@ -208,7 +212,7 @@ function fillBackShedule(arr) {
 }
 
 function fillFrontShedule(arr) {
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < frontShedule.length; i++) {
             if (arr[i]["place"] === "Дома") {
                 frontShedule[i].innerHTML = '<img src="rkpllogos/Endeavourlogo.png" alt="Home team logo" class="shedule-logo homeTeamLogo">' + '<span>VS</span>' + `<img src=${Logo[arr[i]["opponent"]]} alt="Guest team logo" class="shedule-logo guestTeamLogo">`;
             } else {

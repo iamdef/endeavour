@@ -1,6 +1,6 @@
  // эта функция сработает при нажатии на кнопку
 
-  function sendJSONCalendar() {
+function sendJSONCalendar() {
 
     //обращаемся к элементам на странице по их именам
 
@@ -44,9 +44,9 @@
         });
 
     xhr.send(Matchdaydata); // когда всё готово, отправляем JSON на сервер
-  }
+}
 
-  function sendJSONResults() {
+function sendJSONResults() {
 
     //обращаемся к элементам на странице по их именам
     let tournament = document.querySelector('#tournament-results');
@@ -58,6 +58,7 @@
     let youtube = document.querySelector('#youtube');
     let score = document.querySelector('#score');
     let resultat = document.querySelector('#resultat');
+    let place = document.getElementById('place-results');
 
     let result = document.querySelector('.result-results'); // ответ от сервера
     let xhr = new XMLHttpRequest(); // создаём новый экземпляр запроса XHR
@@ -87,10 +88,70 @@
         "date": date.value,
         "time": time.value,
         "opponent": opponent.value,
+        "place": place.value,
         "score": score.value,
         "youtube": youtube.value,
         "resultat": resultat.value
         });
 
     xhr.send(resultsData); // когда всё готово, отправляем JSON на сервер
-  }
+}
+
+function sendJSONPlayers() {
+
+    //обращаемся к элементам на странице по их именам
+    let origin = document.querySelector('#player-origin');
+    let name = document.querySelector('#player-name');
+    let card = document.querySelector('#player-card');
+    let face = document.querySelector('#player-face');
+    let fullphoto = document.querySelector('#player-fullphoto');
+    let country = document.querySelector('#player-country');
+    let city = document.querySelector('#player-city');
+    let matches = document.querySelector('#player-matches');
+    let amplua = document.querySelector('#player-amplua');
+    let position = document.querySelector('#player-position');
+    let goals = document.querySelector('#player-goals');
+    let assists = document.querySelector('#player-assists');
+    let perexvat = document.querySelector('#player-perexvat');
+    let otbor = document.querySelector('#player-otbor');
+
+    let result = document.querySelector('.result-results'); // ответ от сервера
+    let xhr = new XMLHttpRequest(); // создаём новый экземпляр запроса XHR
+    let url = "https://iamdef.ru/json/players/saveplayers.php"; // адрес, куда мы отправим нашу JSON-строку
+
+    xhr.open("POST", url, true); // открываем соединение
+    xhr.setRequestHeader("Content-Type", "application/json"); // устанавливаем заголовок — выбираем тип контента, который отправится на сервер, в нашем случае мы явно пишем, что это JSON
+
+    // когда придёт ответ на наше обращение к серверу, мы его обработаем здесь
+
+    xhr.onreadystatechange = function () {
+
+      // если запрос принят и сервер ответил, что всё в порядке
+
+      if (xhr.readyState === 4 && xhr.status === 200) {
+            result.innerHTML = this.responseText; // выводим то, что ответил нам сервер — так мы убедимся, что данные он получил правильно
+      }
+    };
+
+    // преобразуем наши данные JSON в строку
+
+    var playersData = JSON.stringify(
+        {
+        "origin": origin.value,
+        "name": name.value,
+        "card": card.value,
+        "face": face.value,
+        "fullphoto": fullphoto.value,
+        "country": country.value,
+        "city": city.value,
+        "matches": matches.value,
+        "amplua": amplua.value,
+        "position": position.value,
+        "goals": goals.value,
+        "assists": assists.value,
+        "perexvat": perexvat.value,
+        "otbor": otbor.value
+        });
+
+    xhr.send(playersData); // когда всё готово, отправляем JSON на сервер
+}

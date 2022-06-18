@@ -44,8 +44,12 @@ let Logo = {
     "CrookedPunch": "rkpllogos/levelpro.png",
     "Ragnarok": "rkpllogos/ragnarok.png",
     "TheRed": "rkpllogos/thered.png",
-    "DralGaming": "rkpllogos/dralgaming.png"
-  };
+    "DralGaming": "rkpllogos/dralgaming.png",
+    "FergieTime": "rkpllogos/fergieTime.png",
+    "California":"rkpllogos/california.png",
+    "Gladiators": "rkpllogos/gladiators.png",
+    "EveryonMatters": "rkpllogos/everyonmatters.png"
+};
 let sheduleTab = document.getElementById('shedule-tab');
 let sheduleList = document.getElementById('shedule-list')
 let resultsTab = document.getElementById('results-tab');
@@ -183,7 +187,7 @@ function createListResults(list, arr) {
   
 
 function getJSONCalendar() {
-    var requestURL = "https://iamdef.ru/json/calendar/data2.json"
+    var requestURL = "https://iamdef.ru/json/calendar/data.json"
     var request = new XMLHttpRequest();
 
     request.open('GET', requestURL);
@@ -290,7 +294,7 @@ function deleteNull(arr) {
 function deletePastMatch(arr) {
     let next = [];
     for (let i = 0; i < arr.length; i++) {
-        let matchDate = new Date(arr[i]["date"]); // Если матч уже прошел, его не должно быть в календаре
+        let matchDate = new Date(arr[i]["date"] + "T" + arr[i]["time"]); // Если матч уже прошел, его не должно быть в календаре
         if (today < matchDate) {
             next.push(arr[i])
         }   

@@ -54,6 +54,10 @@
                 <option value="Ragnarok">Ragnarok</option>
                 <option value="TheRed">TheRed</option>
                 <option value="DralGaming">DralGaming</option>
+                <option value="California">California</option>
+                <option value="EveryonMatters">EveryonMatters</option>
+                <option value="FergieTime">FergieTime</option>
+                <option value="Gladiators">Gladiators</option>
             </select>
             <select name="place" id="place">
                 <option selected value="Дома">Дома</option>
@@ -113,6 +117,14 @@
                 <option value="Ragnarok">Ragnarok</option>
                 <option value="TheRed">TheRed</option>
                 <option value="DralGaming">DralGaming</option>
+                <option value="California">California</option>
+                <option value="EveryonMatters">EveryonMatters</option>
+                <option value="FergieTime">FergieTime</option>
+                <option value="Gladiators">Gladiators</option>
+            </select>
+            <select name="place" id="place-results">
+                <option selected value="Дома">Дома</option>
+                <option value="В гостях">В гостях</option>
             </select>
             <input type="text" id="score" name="score" placeholder="Счет матча">
             <select name="resultat" id="resultat">
@@ -125,6 +137,92 @@
             <br>
             <p class="result-results" style="color:green"></p>
             <br>
+        </div>
+        <h1>Добавить игрока в команду</h1>
+        <div id="players">
+            <div class="player-wrap">
+                <label for="player-origin">Origin</label>
+                <input type="text" id="player-origin" name="player-origin" placeholder="origin">
+            </div>
+            <div class="player-wrap">
+                <label for="player-name">Имя</label>
+                <input type="text" id="player-name" name="player-name" placeholder="Имя">
+            </div>
+            <div class="player-wrap">
+                <label for="player-card">Карточка</label>
+                <input type="text" id="player-card" name="player-card" placeholder="players/">
+            </div>
+            <div class="player-wrap">
+                <label for="player-face">Лицо</label>
+                <input type="text" id="player-face" name="player-face" placeholder="players/faces">
+            </div>
+            <div class="player-wrap">
+                <label for="player-fullphoto">Полное фото</label>
+                <input type="text" id="player-fullphoto" name="player-fullphoto" placeholder="players/fullphoto">
+            </div>
+            <div class="player-wrap">
+                <label for="player-country">Страна</label>
+                <input type="text" id="player-country" name="player-country" placeholder="Страна">
+            </div>
+            <div class="player-wrap">
+                <label for="player-city">Город</label>
+                <input type="text" id="player-city" name="player-city" placeholder="Город">
+            </div>
+            <div class="player-wrap">
+                <label for="player-matches">Матчей за клуб</label>
+                <input type="text" id="player-matches" name="player-matches" placeholder="Кол-во матчей">
+            </div>
+            <div class="player-wrap">
+                <label for="player-amplua">Амплуа</label>
+                <select name="player-amplua" id="player-amplua">
+                    <option value="Нападающий">Нападающий</option>
+                    <option value="Полузащитник">Полузащитник</option>
+                    <option value="Защитник">Защитник</option>
+                    <option value="Вратарь">Вратарь</option>
+                </select>
+            </div>
+            <div class="player-wrap">
+                <label for="player-position">Основная позиция</label>
+                <select name="player-position" id="player-position">
+                    <option value="ФРВ">ФРВ</option>
+                    <option value="ЦФД">ЦФД</option>
+                    <option value="ЛФА">ЛФА</option>
+                    <option value="ПФА">ПФА</option>
+                    <option value="ЛП">ЛП</option>
+                    <option value="ПП">ПП</option>
+                    <option value="ЛАП">ЛАП</option>
+                    <option value="ПАП">ПАП</option>
+                    <option value="ЦАП">ЦАП</option>
+                    <option value="ЦП">ЦП</option>
+                    <option value="ЛЦП">ЛАП</option>
+                    <option value="ПЦП">ПАП</option>
+                    <option value="ЦОП">ЦОП</option>
+                    <option value="ЛЗ">ЛЗ</option>
+                    <option value="ПЗ">ПЗ</option>
+                    <option value="ЦЗ">ЦЗ</option>
+                    <option value="ВРТ">ВРТ</option>
+                </select>
+            </div>
+            <div class="player-wrap">
+                <label for="player-goals">Голы</label>
+                <input type="text" id="player-goals" name="player-goals" placeholder="Голы">
+            </div>
+            <div class="player-wrap">
+                <label for="player-assists">Голевые передачи</label>
+                <input type="text" id="player-assists" name="player-assists" placeholder="Голевые передачи">
+            </div>
+            <div class="player-wrap">
+                <label for="player-perexvat">Перехваты</label>
+                <input type="text" id="player-perexvat" name="player-perexvat" placeholder="Перехваты">
+            </div>
+            <div class="player-wrap">
+                <label for="player-otbor">Отборы</label>
+                <input type="text" id="player-otbor" name="player-otbor" placeholder="Отборы">
+            </div>
+            <button onclick="sendJSONPlayers()">Отправить</button>
+            <br>
+            <p class="result-results" style="color:green"></p>
+            <br>   
         </div>
 
     <script src="admincalendar.js"></script>
