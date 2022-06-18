@@ -70,7 +70,7 @@ for (let k = 0; k < (flipCard.length - 1); k++) {
 
 // переопределение классов для вращения
 
-var $width = $(window).width()
+var $width = $(window).width();
 
 for (let i = 0; i < flipCards.length; i++) {
 

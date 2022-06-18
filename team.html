@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="team-style.css">
     <link rel="stylesheet" href="team-style-adaptive.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>Endeavour - Команда</title>
 </head>
 <body>
@@ -44,17 +45,119 @@
                 </ul>
             </nav>
         </section>
-        <div id="wrap">
-            <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <section id="main-wrapper">
+            <div id="squad-wrapper">
+                <div id="squad">
+                    <ul id="gallery" class="slick-slider">
+                        <li class="gallery-card"><img src="/players/thedoctorart.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li> 
+                        <li class="gallery-card"><img src="/players/xolodetzzz.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/harutadyan.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/justalyosha.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/dimonru2.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/thedoctorart.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li> 
+                        <li class="gallery-card"><img src="/players/xolodetzzz.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/harutadyan.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/justalyosha.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/dimonru2.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/justalyosha.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                        <li class="gallery-card"><img src="/players/dimonru2.png" alt=""><a href="#"><button class="profile">Профиль</button></a></li>
+                    </ul>
+                </div>
+                <div id="center-wrapper">
+                    <span class="span-sq">Стартовый состав</span>
+                    <div id="pitch">
+                        <div class="pitch-player" id="keeper">
+                            <img src="/players/kits.png" alt="keeper">
+                            <span class="pitch-player-name">R_Kanj228</span>
+                        </div>
+                        <div class="pitch-player" id="lb">
+                            <img src="/players/kits.png" alt="LB">
+                            <span class="pitch-player-name">DavSum</span>
+                        </div>
+                        <div class="pitch-player" id="rb">
+                            <img src="/players/kits.png" alt="RB">
+                            <span class="pitch-player-name">ND102030</span>
+                        </div>
+                        <div class="pitch-player" id="lcb">
+                            <img src="/players/kits.png" alt="LCB">
+                            <span class="pitch-player-name">MasterJediko</span>
+                        </div>
+                        <div class="pitch-player" id="rcb">
+                            <img src="/players/kits.png" alt="RCB">
+                            <span class="pitch-player-name">Adzel</span>
+                        </div>
+                        <div class="pitch-player" id="cdm">
+                            <img src="/players/kits.png" alt="CDM">
+                            <span class="pitch-player-name">Rabchevsky</span>
+                        </div>
+                        <div class="pitch-player" id="lcm">
+                            <img src="/players/kits.png" alt="LCM">
+                            <span class="pitch-player-name">THE_Doctor_Art</span>
+                        </div>
+                        <div class="pitch-player" id="rcm">
+                            <img src="/players/kits.png" alt="RCM">
+                            <span class="pitch-player-name">Selya</span>
+                        </div>
+                        <div class="pitch-player" id="lm">
+                            <img src="/players/kits.png" alt="LM">
+                            <span class="pitch-player-name">HarutAdyan</span>
+                        </div>
+                        <div class="pitch-player" id="rm">
+                            <img src="/players/kits.png" alt="RM">
+                            <span class="pitch-player-name">just_alyosha</span>
+                        </div>
+                        <div class="pitch-player" id="st">
+                            <img src="/players/kits.png" alt="ST">
+                            <span class="pitch-player-name">DDDDENNYYYY</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="manager">
+                    <div class="manager-card">
+                        <span class="manager-title">Капитан</span>
+                        <img src="/players/thedoctorart.png" alt="captain's card">
+                    </div>
+                    <div class="manager-card">
+                        <span class="manager-title">Спортивный директор</span>
+                        <img src="/players/xolodetzzz.png" alt="director's card">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h1 id="stats-title">Статистика</h1>
+        <section id="stats">
+            <div class="bar-wrapper">
+                <canvas class="bar" id="matches"></canvas> 
+            </div>
+            <div class="bar-wrapper">
+                <canvas class="bar" id="strikers"></canvas> 
+            </div>
+            <div class="bar-wrapper">
+                <canvas class="bar" id="assists"></canvas> 
+            </div>
+            <div class="bar-wrapper">
+                <canvas class="bar" id="otbor"></canvas> 
+            </div>
+            <div class="bar-wrapper">
+                <canvas class="bar" id="perexvat"></canvas> 
+            </div>
+            <div class="bar-wrapper">
+                <canvas class="bar" id="passes"></canvas> 
+            </div>
+        </section>
     </main>
+    <footer>
+        <span>Официальный сайт FIFA 22 Профи-клуба Endeavour &copy 2022 <br><br> Разработано <a href="https://iamdef.ru/" target="_blank"><span id="author">iamdef</span></a></span>
+    </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
         integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+<script src="/node_modules/dragscroll/dragscroll.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="team.js"></script>
 </body>
 </html>

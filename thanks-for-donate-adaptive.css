@@ -159,42 +159,4 @@
     .menu-btn_active span {
         height: 0;
     }
-
-    footer {
-        background-color: var(--bg-color);
-        padding: 5vw;
-        text-align: left;
-        border-top: 0.5vw solid var(--border-color);
-    }
-    
-    footer span {
-        background-color: inherit;
-        font-size: 80%;
-    }
-    
-    #author {
-        color: var(--border-color);
-        background-color: var(--bg-color);
-        font-size: 100%;
-    }
-}
-
-@media all and (max-width: 426px) {
-    footer {
-        background-color: var(--bg-color);
-        padding: 5vw;
-        text-align: left;
-        border-top: 0.5vw solid var(--border-color);
-    }
-    
-    footer span {
-        background-color: inherit;
-        font-size: 80%;
-    }
-    
-    #author {
-        color: var(--border-color);
-        background-color: var(--bg-color);
-        font-size: 100%;
-    }
 }
