@@ -169,39 +169,6 @@
         border: unset;
         margin-bottom: .3vw;
     }
-
-    #donate-wraper {
-        background-color: rgb(15, 15, 15);
-        width: 100%;
-        height: auto;
-        margin: unset;
-        border-radius: unset;
-        border-top: 0.325vw solid var(--border-color);
-    
-    }
-    
-    #donate-wraper span {
-        background-color: rgb(15, 15, 15);
-    }
-    
-    #donate-wraper ul {
-        font-size: 2.75vw;
-        background-color: rgb(15, 15, 15);
-        padding: 1vw;
-        margin-top: 4vw;
-        margin-bottom: 4vw;
-    }
-    
-    #donate-wraper ul li {
-        background-color: rgb(15, 15, 15);
-    }
-    
-    #top-wrapper img {
-        width: 50%;
-        background-color: transparent;
-        margin-top: 4vw;
-        margin-bottom: 4vw;
-    }
     
     footer {
         background-color: var(--bg-color);
@@ -221,81 +188,81 @@
         background-color: var(--bg-color);
         font-size: 100%;
     }
-    
-    h1 {
-        width: 100%;
-        text-align: center;
-        background-color: var(--bg-color);
-        padding-top: 3vw;
-        border-top-left-radius: unset;
-        border-top-right-radius: unset;
-        font-size: 5vw;
-    }
-    
-    #top-wrapper {
+
+    #donate-wrapper {
         width: 100%;
         display: flex;
         align-items: center;
-        flex-direction: column;
         justify-content: center;
-        background-color: rgb(15, 15, 15);
     }
     
-    #down-wrapper {
+    #wrap {
+        background-color: rgb(15, 15, 15);
         width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        background-color: rgb(15, 15, 15);
+        margin-top: 0vw;
+        border-radius: unset;
+        padding: 2vw;
+        border-top: .25vw solid var(--border-color);
     }
     
-    .krypto-wrap {
+    #top-wrap {
+        width: 100%;
+        background-color: rgb(15, 15, 15);
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: rgb(15, 15, 15);
-        padding-top: 3vw;
-        margin-bottom: 3vw;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
     
-    .krypto-wrap img {
-        width: 45%;
-        margin-top: 4vw;
-        
+    #top-wrap img {
+        width: 55%;
+        background-color: transparent;
+    }
+    
+    #top-wrap li {
+        background-color: rgb(15, 15, 15);
+        font-size: 20px;
     }
 
-
+    #krypto-wrap {
+        width: 100%;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
     
-    .krypto-wrap span {
-        text-align: center;
-        padding-top: 1vw;
-        font-size: 2.75vw;
+    .qr-wrap {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
         margin-top: 2vw;
-        
+    }
+    
+    .qr-wrap img {
+        width: 35%;
+        margin: auto;
     }
     
     .adress {
         color: var(--border-color);
+        font-size: 18px;
     }
     
-    #nft {
-        background-color: rgb(15, 15, 15);
-        width: 100%;
-        margin-top: 3vw;
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-        border-bottom-left-radius: unset;
-        border-bottom-right-radius: unset;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    
+    .qr-wrap span {
+        margin: auto;
+        padding: 1.5vw;
+        text-align: center;
     }
+    
 
 }
 
-@media all and (max-width: 425px) {
+@media all and (max-width: 426px) {
     .menu-block {
         display: block;
         position: absolute;
@@ -425,20 +392,108 @@
         height: 0;
     }
 
-    .krypto-wrap img {
-        width: 55%;
-        margin-top: 4vw;
-        
+    #donate-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-
-    #top-wrapper img {
-        width: 55%;
+    
+    #wrap {
+        background-color: rgb(15, 15, 15);
+        width: 100%;
+        margin-top: 0vw;
+        border-radius: unset;
+        padding: 2vw;
+        border-top: .25vw solid var(--border-color);
+    }
+    
+    #top-wrap {
+        width: 100%;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    #top-wrap img {
+        width: 75%;
         background-color: transparent;
-        margin-top: 4vw;
-        margin-bottom: 4vw;
     }
 
+    #top-wrap ul {
+        padding: 3vw;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    #top-wrap li {
+        background-color: rgb(15, 15, 15);
+        font-size: 18px;
+        margin-bottom: 2vw;
+    }
 
+    #krypto-wrap {
+        width: 100%;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    .qr-wrap {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        margin-top: 4vw;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .qr-wrap img {
+        width: 55%;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .adress {
+        color: var(--border-color);
+        font-size: 18px;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    
+    .qr-wrap span {
+        margin: auto;
+        text-align: center;
+    }
 
+    #btc-btn,
+    #usdt-btn {
+    width: 130px;
+    height: 45px;
+    margin: auto;
+    background-color: #1d1d1d;;
+    color: var(--border-color);
+    }
+
+}
+
+@media all and (max-width: 376px) {
+    #top-wrap li {
+        background-color: rgb(15, 15, 15);
+        font-size: 16px;
+        margin-bottom: 2vw;
+    }
+}
+
+@media all and (max-width: 321px) {
+    li {
+        background-color: rgb(15, 15, 15);
+        font-size: 14px;
+        margin-bottom: 2.5vw;
+    }
 }
 

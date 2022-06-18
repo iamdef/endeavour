@@ -113,33 +113,6 @@ header {
     color: var(--border-color);
 }
 
-#donate-wraper {
-    background-color: rgb(15, 15, 15);
-    width: 90%;
-    height: auto;
-    margin: 1vw 5% 1vw 5%;
-    border-radius: 15px;
-}
-
-#donate-wraper span {
-    background-color: rgb(15, 15, 15);
-}
-
-#donate-wraper ul {
-    font-size: 1.5vw;
-    background-color: rgb(15, 15, 15);
-    padding: 1vw;
-}
-
-#donate-wraper ul li {
-    background-color: rgb(15, 15, 15);
-}
-
-#top-wrapper img {
-    width: 30%;
-    background-color: transparent;
-}
-
 footer {
     background-color: var(--bg-color);
     padding: 5vw;
@@ -159,67 +132,114 @@ footer span {
     font-size: 100%;
 }
 
-h1 {
+#donate-wrapper {
     width: 100%;
-    text-align: center;
-    background-color: var(--bg-color);
-    padding-top: 1vw;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-#top-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgb(15, 15, 15);
-}
-
-#down-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgb(15, 15, 15);
-}
-
-.krypto-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+}
+
+#wrap {
     background-color: rgb(15, 15, 15);
-    padding-top: 3vw;
-
+    width: 90%;
+    /* height: 100vh; */
+    margin-top: 1vw;
+    border-radius: 10px;
+    padding: 2vw;
 }
 
-.krypto-wrap img {
+#top-wrap {
+    width: 100%;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#top-wrap img {
     width: 35%;
+    background-color: transparent;
 }
 
-.krypto-wrap span {
-    text-align: center;
-    padding-top: 1vw;
-    
+#top-wrap ul {
+    background-color: rgb(15, 15, 15);
+}
+
+#top-wrap li {
+    background-color: rgb(15, 15, 15);
+    font-size: 22px;
+    margin-bottom: 1vw;
+}
+
+#krypto-wrap {
+    width: 100%;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.qr-wrap {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+}
+
+.qr-wrap img {
+    width: 35%;
+    margin: auto;
+    background-color: rgb(15, 15, 15);
 }
 
 .adress {
     color: var(--border-color);
+    font-size: 22px;
+    background-color: rgb(15, 15, 15);
 }
 
-#nft {
+.way {
+    font-size: 16px;
+}
+
+.qr-wrap span {
+    margin: auto;
+    padding: .75vw;
+    text-align: center;
     background-color: rgb(15, 15, 15);
+}
+
+.way {
+    display: none;
+}
+
+#btc-btn,
+#usdt-btn {
+    width: 130px;
+    height: 30px;
+    margin: auto;
+    background-color: #1d1d1d;;
+    color: var(--border-color);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#youmoney {
     width: 100%;
-    padding-top: 3vw;
-    padding-bottom: 3vw;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background-color: rgb(15, 15, 15);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 5vw;
 }
 
 iframe {
-    background-color: transparent;
+    width: 212px;
+    height: 48px;
 }
