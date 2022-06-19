@@ -21,7 +21,273 @@
     }
 }
 
+@media all and (max-width: 1300px) {
+    a {
+        text-decoration: none;
+    }
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 416.7px;
+        height: 267.2px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .pitch-player-name {
+        text-align: center;
+        background-color: rgba(15, 15, 15, .5);
+        color: var(--border-color);
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+}
+
+@media all and (max-width: 1150px) {
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 357.14px;
+        height: 305.36px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .pitch-player-name {
+        text-align: center;
+        background-color: rgba(15, 15, 15, .5);
+        color: var(--border-color);
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    #squad-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+        border-bottom: 0.0625vw solid var(--border-color);
+        background-color: rgb(15, 15, 15);
+    }
+    
+    #squad {
+        background-color: var(--bg-color);
+        width: 32%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border-right: 0.0625vw solid var(--border-color); */
+        min-width: 0;
+        
+    }
+    
+    #manager {
+        background-color: var(--bg-color);
+        width: 32%;
+        height: 100%;
+        /* border-left: 0.0625vw solid var(--border-color); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .manager-card {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .manager-card img {
+        width: 60%;
+        background-color: transparent;
+    }
+    
+    .manager-title {
+        color: var(--border-color);
+        font-size: 28px;
+        background-color: transparent;
+    }
+    
+    #center-wrapper {
+        height: 80%;
+        width: 38%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        /* background-color: rgb(15, 15, 15); */
+    }
+    
+    .span-sq {
+        color: var(--border-color);
+        font-size: 28px;
+        background-color: rgb(15, 15, 15);
+        text-align: center;
+    }
+    
+    #gallery {
+        width: 80%;
+        height: 70%;
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        align-items: center;
+        z-index: 80;
+        background-color: rgb(15, 15, 15);
+        min-width: 0;
+    }
+
+    .slick-prev {
+        top: -10px;
+    }
+    
+    .slick-next {
+        top: auto;
+        bottom: -20px;
+    }
+    
+    .slick-vertical .slick-arrow {
+        width: 30px;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+        background-color: aliceblue;
+        border-radius: 50%;
+        border: .1vw solid black;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+        
+    .slick-vertical .slick-arrow:hover { 
+        opacity: .6; 
+    }
+    
+    #gallery::-webkit-scrollbar { display: none;}
+    
+    .gallery-card {
+        width: 18vw;
+        height: 20vw;
+        min-width: 0;
+        background-color: rgb(15, 15, 15);
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center!important;
+        align-items: center !important;
+        border-radius: 5%;
+        cursor: grab;
+        margin-top: 1vw;
+        min-width: 0;
+    }
+    
+    .gallery-card:last-child {
+        margin-bottom: 1vw;
+    }
+        
+    .gallery-card img {
+        width: 60%;
+        background-color: transparent;
+    }
+    
+    a {
+        background-color: transparent;
+    }
+    
+    .profile {
+        background-image: linear-gradient(144deg,goldenrod, #e9d926 50%,goldenrod);
+        width: 200px;
+        height: 2vw;
+        color: var(--bg-color);
+        border-radius: 10px;
+    }
+    
+    .profile:hover {
+        cursor: pointer;
+    }
+    
+    #stats {
+        width: 100%;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    
+    #stats-title {
+        width: 100%;
+        text-align: center;
+        color: var(--border-color);
+        font-size: 28px;
+        background-color: var(--bg-color);
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+
+}
+
+@media all and (max-width: 960px) {
+    a {
+        text-decoration: none;
+    }
+
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 312.5px;
+        height: 267.2px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .pitch-player-name {
+        text-align: center;
+        background-color: rgba(15, 15, 15, .5);
+        color: var(--border-color);
+        font-weight: bold;
+        font-size: 10px;
+    }
+}
+
+@media all and (max-width: 840px) {
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 294.12px;
+        height: 251.47px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .pitch-player-name {
+        text-align: center;
+        background-color: rgba(15, 15, 15, .5);
+        color: var(--border-color);
+        font-weight: bold;
+        font-size: 9px;
+    }
+}
+
 @media all and (max-width: 768px) {
+    a {
+        text-decoration: none;
+    }
+
     body {
         overflow-x: hidden;
     }
@@ -112,8 +378,8 @@
     
     .menu-btn {
         display: block;
-        width: 15vw;
-        height: 15vw;
+        width: 10vw;
+        height: 10vw;
         right: 0;
         background-color: transparent;
         border-radius: 50%;
@@ -127,8 +393,8 @@
       top: 50%;
       margin-top: -0.125vw;
       left: 50%;
-      margin-left: -3.5vw;
-      width: 7vw;
+      margin-left: -2.5vw;
+      width: 5vw;
       height: 0.25vw;
       background-color: aliceblue;
     }
@@ -164,7 +430,7 @@
         background-color: var(--bg-color);
         padding: 5vw;
         text-align: left;
-        border-top: 0.5vw solid var(--border-color);
+        border-top: 0.125vw solid var(--border-color);
     }
     
     footer span {
@@ -176,6 +442,214 @@
         color: var(--border-color);
         background-color: var(--bg-color);
         font-size: 100%;
+    }
+
+    #squad-wrapper {
+        display: none;
+    }
+
+    #squad-wrapper-mobile {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 0.125vw solid var(--border-color);
+        margin-top: .3vw;
+    }
+
+    #center-wrapper {
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgb(15, 15, 15);
+    }
+
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 500px;
+        height: 427.5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .pitch-player-name {
+        text-align: center;
+        background-color: rgba(15, 15, 15, .5);
+        color: var(--border-color);
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    #manager {
+        background-color: var(--bg-color);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .manager-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .manager-card img {
+        width: 60%;
+        background-color: transparent;
+    }
+    
+    .manager-title {
+        color: var(--border-color);
+        font-size: 28px;
+        background-color: transparent;
+    }
+
+    #squad {
+        background-color: var(--bg-color);
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border-right: 0.0625vw solid var(--border-color); */
+        min-width: 0;
+    }
+
+    #gallery-mobile {
+        width: 100%;
+        padding: 2vw;
+        display: flex;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        overscroll-behavior: contain;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        scroll-snap-type: x mandatory;
+        list-style: none;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .gallery-card-mobile {
+        width: 40vw;
+        height: 42vw;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5%;
+        flex-shrink: 0;
+        cursor: grab;
+        margin-right: 2vw;
+    }
+    
+    .gallery-card-mobile img {
+        background-color: transparent;
+        width: 80%;
+    }
+
+    #gallery-mobile::-webkit-scrollbarr { display: none;}
+
+    .profile {
+        background-image: linear-gradient(144deg,goldenrod, #e9d926 50%,goldenrod);
+        width: 200px;
+        height: 3vw;
+        color: var(--bg-color);
+        border-radius: 10px;
+    }
+
+
+}
+
+@media all and (max-width: 531px) {
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 384.6px;
+        height: 328.85px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .pitch-player-name {
+        text-align: center;
+        background-color: rgba(15, 15, 15, .5);
+        color: var(--border-color);
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .profile {
+        background-image: linear-gradient(144deg,goldenrod, #e9d926 50%,goldenrod);
+        width: 150px;
+        height: 5vw;
+        color: var(--bg-color);
+        border-radius: 10px;
+    }
+
+    .manager-title,
+    .span-sq,
+    #stats-title {
+        font-size: 22px;
+    }
+
+    #manager {
+        background-color: var(--bg-color);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .manager-card {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .manager-card img {
+        width: 50%;
+        background-color: transparent;
+    }
+
+    #center-wrapper {
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgb(15, 15, 15);
+    }
+
+    .bar-wrapper {
+        width: 80%;
+        margin: auto;
+        padding: 3vw;
     }
 }
 
@@ -196,5 +670,71 @@
         color: var(--border-color);
         background-color: var(--bg-color);
         font-size: 100%;
+    }
+
+    .bar-wrapper {
+        width: 90%;
+        margin: auto;
+        padding: 5vw;
+    }
+}
+
+@media all and (max-width: 400px) {
+    #pitch {
+        background-image: url("pitch2.png");
+        width: 312.5px;
+        height: 267.2px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-color: rgb(15, 15, 15);
+        position: relative;
+    }
+
+    .bar-wrapper {
+        width: 100%;
+        margin: auto;
+        padding: 5vw;
+    }
+
+    .manager-card {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    .manager-card img {
+        width: 80%;
+        background-color: transparent;
+    }
+
+    .gallery-card-mobile {
+        width: 70vw;
+        height: 80vw;
+        background-color: rgb(15, 15, 15);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5%;
+        flex-shrink: 0;
+        cursor: grab;
+        margin-right: 2vw;
+    }
+    
+    .gallery-card-mobile img {
+        background-color: transparent;
+        width: 80%;
+    }
+
+    .profile {
+        background-image: linear-gradient(144deg,goldenrod, #e9d926 50%,goldenrod);
+        width: 150px;
+        height: 7vw;
+        color: var(--bg-color);
+        border-radius: 10px;
     }
 }
