@@ -203,44 +203,20 @@
             </div>
         </section>
         <h1 id="stats-title">Статистика</h1>
-        <div class="tabs">
-            <ul class="tabs__caption">
-              <li class="active">Количество матчей</li>
-              <li>Бомбардиры</li>
-              <li>Ассистенты</li>
-              <li>Отборы</li>
-              <li>Перехваты</li>
-              <li>Передачи</li>
+        <div class="chart-choice">
+            <ul class="choices">
+              <li id="matсhes-li">Количество матчей</li>
+              <li id="goals-li">Бомбардиры</li>
+              <li id="assists-li">Ассистенты</li>
+              <li id="otbor-li">Отборы</li>
+              <li id="perexvat-li">Перехваты</li>
+              <li id="passes-li">Передачи</li>
             </ul>
-            <div class="tabs__content active">
+            <div class="chart-wrapper">
                 <div class="bar-wrapper">
                     <canvas class="bar" id="matches"></canvas> 
                 </div>
             </div>
-            <div class="tabs__content">
-                <div class="bar-wrapper">
-                    <canvas class="bar" id="strikers"></canvas> 
-                </div>
-            </div>
-            <div class="tabs__content">
-                <div class="bar-wrapper">
-                    <canvas class="bar" id="assists"></canvas> 
-                </div>
-              </div>
-              <div class="tabs__content">
-                <div class="bar-wrapper">
-                    <canvas class="bar" id="otbor"></canvas> 
-                </div>
-              </div>
-              <div class="tabs__content">
-                <div class="bar-wrapper">
-                    <canvas class="bar" id="perexvat"></canvas> 
-                </div>
-              </div>
-              <div class="tabs__content">
-                <div class="bar-wrapper">
-                    <canvas class="bar" id="passes"></canvas> 
-                </div>
         </div>
     </main>
     <footer>

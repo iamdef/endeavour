@@ -28,7 +28,7 @@
     #pitch {
         background-image: url("pitch2.png");
         width: 416.7px;
-        height: 267.2px;
+        height: 356.25px;
         background-size: contain;
         background-repeat: no-repeat;
         margin: auto;
@@ -206,7 +206,7 @@
     .profile {
         background-image: linear-gradient(144deg,goldenrod, #e9d926 50%,goldenrod);
         width: 200px;
-        height: 2vw;
+        height: 3vw;
         color: var(--bg-color);
         border-radius: 10px;
     }

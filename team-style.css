@@ -250,10 +250,10 @@ footer span {
 #squad {
     background-color: var(--bg-color);
     width: 32%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     /* border-right: 0.0625vw solid var(--border-color); */
     min-width: 0;
     
@@ -311,7 +311,7 @@ footer span {
 
 #gallery {
     width: 80%;
-    height: 70%;
+    height: auto !important;
     display: flex !important;
     list-style: none;
     flex-direction: column !important;
@@ -401,6 +401,7 @@ a {
     width: 70%;
     margin: auto;
     padding: 3vw;
+
 }
 
 .bar {
@@ -418,19 +419,7 @@ a {
     padding-bottom: 2vw;
     font-weight: normal;
 }
-
-.tabs__content {
-    display: none;
-}
-
-.tabs__content.active {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.tabs__caption {
+.choices {
     margin: auto;
     width: 100%;
     display: flex;
@@ -439,7 +428,7 @@ a {
     flex-wrap: wrap;
 }
 
-.tabs__caption li {
+.choices li {
     background-color: rgba(218, 165, 32, 0.7);
     height: 25px;
     width: 170px;
@@ -451,10 +440,10 @@ a {
     
 }
 
-.tabs__caption li {
+.choices li {
     margin-right: 2vw;
 }
 
-.tabs__caption li:hover {
+.choices li:hover {
     cursor: pointer;
 }
